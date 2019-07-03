@@ -94,7 +94,7 @@ quit
 EOF
     vgcreate host $disk"1" -f
     lvcreate -l 100%FREE host -n root
-    mkfs.ext4 /dev/mapper/host-root -FF
+    mkfs.ext4 /dev/mapper/host-root -F -F
     echo "…done!"
 }
 
@@ -138,6 +138,7 @@ install_AUR () {
     echo "Installing AUR helper…"
     env "user=$user" arch-chroot /mnt <<"EOF"
 s="sudo -u $user"
+pacman -Sy
 $s mkdir /home/$user/source
 cd /home/$user/source
 $s git clone https://aur.archlinux.org/package-query.git
