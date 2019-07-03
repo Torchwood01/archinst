@@ -86,6 +86,7 @@ set_disk () {
     parted $disk <<EOF
 mklabel msdos
 yes
+ignore
 mkpart primary ext4 0% 100% 
 yes
 set 1 boot on
