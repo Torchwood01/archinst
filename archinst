@@ -29,6 +29,7 @@ varabies () {
     help="Usage: archinst [sdX] [hostname] [username]"
     error1="Error! Please specify at very least destination disk.\n\n$help"
     error2="Error! Non existent disk speciefied. May be your typo or general failure in reading disk.\n\n$help"
+    oldbase="bash bzip2 cryptsetup device-mapper dhcpcd e2fsprogs findutils gawk gcc-libs gettext glibc inetutils iproute2 iputils jfsutils licenses linux-firmware logrotate lvm2 man-db man-pages mdadm nano netctl pacman pciutils perl procps-ng psmisc reiserfsprogs s-nail shadow sysfsutils systemd-sysvcompat texinfo usbutils util linux xfsprogs"
 }
 
 define_input () {
@@ -98,7 +99,7 @@ EOF
 install_OS () {
     echo "Installing OS…"
     mount /dev/mapper/host-root /mnt
-    pacstrap /mnt base base-devel grub lvm2 sudo emacs git plasma xorg-xinit $GPU mesa network-manager-applet yakuake
+    pacstrap /mnt base $oldbase base-devel grub lvm2 sudo emacs git plasma xorg-xinit $GPU mesa network-manager-applet yakuake
     echo "…done!"
 }
 set_basics () {
