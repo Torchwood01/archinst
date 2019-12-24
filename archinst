@@ -164,6 +164,7 @@ EOF
     echo "…done!"
 }
 init () {
+varabies
 define_input "$@"
 define_GPU
 set_disk
