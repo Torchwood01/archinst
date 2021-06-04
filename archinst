@@ -99,7 +99,7 @@ EOF
 install_OS () {
     echo "Installing OS…"
     mount /dev/mapper/host-root /mnt
-    pacstrap /mnt base $oldbase base-devel grub lvm2 sudo emacs git plasma xorg-xinit $GPU mesa network-manager-applet yakuake
+    pacstrap /mnt linux base $oldbase base-devel grub lvm2 sudo emacs git plasma xorg-xinit $GPU mesa network-manager-applet yakuake
     echo "…done!"
 }
 set_basics () {
